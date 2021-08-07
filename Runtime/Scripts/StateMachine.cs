@@ -5,6 +5,7 @@ using UnityEngine;
 /// <summary>
 /// An FSM controller.
 /// Stores transitions and updates the active state.
+/// Add [SerializeReference] attribute to its field and the current state will be shown in the inspector.
 /// </summary>
 [Serializable]
 public class StateMachine
@@ -42,8 +43,6 @@ public class StateMachine
         currentState = state;
         currentTransitions = GetStateTransitions(state);
         currentState.OnStateEnter();
-        
-        Debug.Log(state.GetType().Name);
     }
 
     /// <summary>
