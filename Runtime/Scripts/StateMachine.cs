@@ -1,15 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 /// <summary>
 /// An FSM controller.
 /// Stores transitions and updates the active state.
 /// </summary>
+[Serializable]
 public class StateMachine
 {
     private static List<Transition> emptyTransitions = new List<Transition>(0);
+
+    [SerializeReference] private IState currentState;
     
-    private IState currentState;
     private Dictionary<Type, List<Transition>> transitionsByType = new Dictionary<Type, List<Transition>>();
     private List<Transition> currentTransitions = new List<Transition>();
     private List<Transition> globalTransitions = new List<Transition>();
@@ -39,6 +42,8 @@ public class StateMachine
         currentState = state;
         currentTransitions = GetStateTransitions(state);
         currentState.OnStateEnter();
+        
+        Debug.Log(state.GetType().Name);
     }
 
     /// <summary>

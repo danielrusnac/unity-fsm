@@ -1,0 +1,16 @@
+{
+    "name": "danielrusnac.unityfsm.editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:6068bd4aed45b394cad9600e41b3fb72"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
