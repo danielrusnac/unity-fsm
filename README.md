@@ -1,2 +1,2 @@
-# unity-fsm
-A simple finite-state machine (FSM) for unity.
+# Unity FSM
+A simple finite-state machine for unity.
