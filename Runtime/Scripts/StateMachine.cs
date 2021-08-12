@@ -37,7 +37,9 @@ public class StateMachine
     public void SetState(IState state)
     {
         if (state == currentState)
+        {
             return;
+        }
         
         currentState?.OnStateExit();
         currentState = state;
