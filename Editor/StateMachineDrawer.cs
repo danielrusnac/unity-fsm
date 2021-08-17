@@ -2,7 +2,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace Editor
+namespace UnityFSM.Editor
 {
     [CustomPropertyDrawer(typeof(StateMachine))]
     public class StateMachineDrawer : PropertyDrawer

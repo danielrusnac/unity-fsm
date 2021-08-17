@@ -1,6 +1,6 @@
 {
     "name": "danielrusnac.unityfsm.editor",
-    "rootNamespace": "",
+    "rootNamespace": "UnityFSM.Editor",
     "references": [
         "GUID:6068bd4aed45b394cad9600e41b3fb72"
     ],
