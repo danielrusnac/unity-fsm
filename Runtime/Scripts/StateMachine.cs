@@ -12,7 +12,7 @@ public class StateMachine
 {
     private static List<Transition> emptyTransitions = new List<Transition>(0);
 
-    [SerializeReference] private IState currentState;
+    [SerializeField] protected IState CurrentState;
     
     private Dictionary<Type, List<Transition>> transitionsByType = new Dictionary<Type, List<Transition>>();
     private List<Transition> currentTransitions = new List<Transition>();
@@ -28,7 +28,7 @@ public class StateMachine
             SetState(transition.State);
         }
         
-        currentState?.OnTick();
+        CurrentState?.OnTick();
     }
 
     /// <summary>
@@ -36,15 +36,15 @@ public class StateMachine
     /// </summary>
     public void SetState(IState state)
     {
-        if (state == currentState)
+        if (state == CurrentState)
         {
             return;
         }
         
-        currentState?.OnStateExit();
-        currentState = state;
+        CurrentState?.OnStateExit();
+        CurrentState = state;
         currentTransitions = GetStateTransitions(state);
-        currentState.OnStateEnter();
+        CurrentState.OnStateEnter();
     }
 
     /// <summary>
